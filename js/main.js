@@ -120,10 +120,18 @@ let students = [
     },
   ];
 
-  let container = $('.container');
-  for (let i of students){
-      if(i.kpi > 50){
-
-      }
+  let container = $(".container");
+for (let elem of students) {
+  if (elem.kpi > 50) {
+    container.append(
+      `<div class="green"><span>${elem.name}</span><span>${elem.kpi}</span></div>`
+    );
+  } else if (elem.kpi < 50) {
+    container.append(
+      `<div class="red"><span>${elem.name}</span><span>${elem.kpi}</span></div>`
+    );
   }
-  console.log();
+}
+
+$(".green").css("background-color", "green");
+$(".red").css("background-color", "red");
